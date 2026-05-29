@@ -1,0 +1,19 @@
+{
+  "assignment" : {
+    "T14" : 0,
+    "T5" : 0,
+    "T6" : 1,
+    "T9" : 1,
+    "T7" : 1,
+    "T2" : 1,
+    "T11" : 2,
+    "T12" : 3,
+    "T4" : 2,
+    "T0" : 2,
+    "T1" : 0
+  },
+  "penalty" : -1.0,
+  "runtimeMs" : 6,
+  "feasible" : false,
+  "violationReason" : "Task T10 ke liye koi valid slot nahi mila (window=[0,3], conflicts aur resource limits ke baad)"
+}

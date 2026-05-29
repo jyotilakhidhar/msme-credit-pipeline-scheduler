@@ -1,0 +1,297 @@
+{
+  "k": 8,
+  "tasks": [
+    {
+      "id": "T0",
+      "resources": [
+        1.2,
+        1.2,
+        0.5,
+        0.1
+      ],
+      "lower_bound": 1,
+      "upper_bound": 7,
+      "weight": 1.1
+    },
+    {
+      "id": "T1",
+      "resources": [
+        1.9,
+        3.6,
+        0.7,
+        0.5
+      ],
+      "lower_bound": 1,
+      "upper_bound": 6,
+      "weight": 1.6
+    },
+    {
+      "id": "T2",
+      "resources": [
+        0.8,
+        3.5,
+        0.8,
+        0.1
+      ],
+      "lower_bound": 1,
+      "upper_bound": 6,
+      "weight": 4.7
+    },
+    {
+      "id": "T3",
+      "resources": [
+        1.9,
+        1.5,
+        0.4,
+        0.4
+      ],
+      "lower_bound": 2,
+      "upper_bound": 6,
+      "weight": 9.7
+    },
+    {
+      "id": "T4",
+      "resources": [
+        0.6,
+        3.3,
+        0.5,
+        0.3
+      ],
+      "lower_bound": 0,
+      "upper_bound": 7,
+      "weight": 8.9
+    },
+    {
+      "id": "T5",
+      "resources": [
+        1.4,
+        1.2,
+        0.9,
+        0.5
+      ],
+      "lower_bound": 2,
+      "upper_bound": 7,
+      "weight": 4.2
+    },
+    {
+      "id": "T6",
+      "resources": [
+        0.9,
+        3.1,
+        0.5,
+        0.2
+      ],
+      "lower_bound": 2,
+      "upper_bound": 6,
+      "weight": 4.5
+    },
+    {
+      "id": "T7",
+      "resources": [
+        1.4,
+        2.7,
+        0.6,
+        0.1
+      ],
+      "lower_bound": 1,
+      "upper_bound": 6,
+      "weight": 5.6
+    },
+    {
+      "id": "T8",
+      "resources": [
+        1.0,
+        1.5,
+        0.2,
+        0.2
+      ],
+      "lower_bound": 0,
+      "upper_bound": 7,
+      "weight": 4.6
+    },
+    {
+      "id": "T9",
+      "resources": [
+        1.4,
+        2.7,
+        0.5,
+        0.2
+      ],
+      "lower_bound": 0,
+      "upper_bound": 6,
+      "weight": 5.0
+    },
+    {
+      "id": "T10",
+      "resources": [
+        2.0,
+        2.9,
+        0.6,
+        0.4
+      ],
+      "lower_bound": 1,
+      "upper_bound": 7,
+      "weight": 5.4
+    },
+    {
+      "id": "T11",
+      "resources": [
+        1.4,
+        1.8,
+        0.6,
+        0.2
+      ],
+      "lower_bound": 0,
+      "upper_bound": 6,
+      "weight": 2.9
+    },
+    {
+      "id": "T12",
+      "resources": [
+        0.6,
+        1.4,
+        0.5,
+        0.3
+      ],
+      "lower_bound": 0,
+      "upper_bound": 6,
+      "weight": 1.7
+    },
+    {
+      "id": "T13",
+      "resources": [
+        1.8,
+        3.7,
+        0.7,
+        0.2
+      ],
+      "lower_bound": 2,
+      "upper_bound": 7,
+      "weight": 7.9
+    },
+    {
+      "id": "T14",
+      "resources": [
+        1.6,
+        3.6,
+        0.3,
+        0.3
+      ],
+      "lower_bound": 1,
+      "upper_bound": 6,
+      "weight": 8.5
+    }
+  ],
+  "conflicts": [
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      13
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      5,
+      10
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      6,
+      12
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      9,
+      14
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      12,
+      14
+    ]
+  ],
+  "capacities": [
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ],
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ],
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ],
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ],
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ],
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ],
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ],
+    [
+      90.0,
+      180.0,
+      90.0,
+      90.0
+    ]
+  ]
+}

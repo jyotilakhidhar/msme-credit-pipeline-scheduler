@@ -1,0 +1,16 @@
+{
+  "assignment" : {
+    "T6" : 1,
+    "T4" : 2,
+    "T7" : 2,
+    "T5" : 1,
+    "T1" : 0,
+    "T3" : 3,
+    "T2" : 2,
+    "T0" : 3
+  },
+  "penalty" : 52.21318305121528,
+  "runtimeMs" : 2,
+  "feasible" : true,
+  "violationReason" : null
+}

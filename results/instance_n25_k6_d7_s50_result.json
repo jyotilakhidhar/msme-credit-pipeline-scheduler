@@ -1,0 +1,14 @@
+{
+  "assignment" : {
+    "T4" : 2,
+    "T19" : 1,
+    "T9" : 3,
+    "T18" : 2,
+    "T13" : 4,
+    "T2" : 5
+  },
+  "penalty" : -1.0,
+  "runtimeMs" : 2,
+  "feasible" : false,
+  "violationReason" : "Task T20 ke liye koi valid slot nahi mila (window=[2,4], conflicts aur resource limits ke baad)"
+}
