@@ -10,10 +10,7 @@ import com.scoreme.scheduler.io.ResultWriter;
 import com.scoreme.scheduler.model.AssignmentResult;
 import com.scoreme.scheduler.model.SchedulerInstance;
 
-/**
- * Entry point — reads JSON input, runs algorithm, saves result.
- * Usage: mvn spring-boot:run -Dspring-boot.run.arguments="<input.json> <output.json>"
- */
+
 @SpringBootApplication
 public class SchedulerApplication implements CommandLineRunner {
 

@@ -6,10 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.scoreme.scheduler.model.AssignmentResult;
 
-/**
- * Writes AssignmentResult to a JSON output file.
- * Output is saved to the results/ directory.
- */
+
 public class ResultWriter {
 
     private final ObjectMapper mapper = new ObjectMapper()

@@ -4,15 +4,9 @@ import java.util.Map;
 
 import com.scoreme.scheduler.model.SchedulerInstance;
 import com.scoreme.scheduler.model.Task;
-/**
- * Checks F2 constraint — slot ki capacity exceed na ho.
- * Like a classroom at full capacity — no more students can enter.
- */
+
 public class ResourceChecker {
 
-    /**
-     * Can taskIndex fit into slot s without exceeding resource capacity?
-     */
     public boolean fits(int taskIndex, int slot,
                         SchedulerInstance instance,
                         Map<String, Integer> currentAssignment) {
@@ -21,12 +15,10 @@ public class ResourceChecker {
         double[] capacity = instance.getCapacities().get(slot);
         double[] required = newTask.getResources();
 
-        // Calculate current resource usage in this slot
         double[] used = new double[capacity.length];
 
         for (Map.Entry<String, Integer> entry : currentAssignment.entrySet()) {
             if (entry.getValue() == slot) {
-                // This task is already assigned to this slot
                 String assignedId = entry.getKey();
                 Task assignedTask = instance.getTasks().stream()
                         .filter(t -> t.getId().equals(assignedId))
@@ -41,10 +33,9 @@ public class ResourceChecker {
             }
         }
 
-        // Check if adding new task would exceed slot capacity
         for (int d = 0; d < capacity.length; d++) {
             if (used[d] + required[d] > capacity[d]) {
-                return false; // capacity full!
+                return false; 
             }
         }
         return true;

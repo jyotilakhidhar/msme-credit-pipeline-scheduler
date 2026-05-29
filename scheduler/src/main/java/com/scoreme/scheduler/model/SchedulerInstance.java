@@ -2,33 +2,16 @@ package com.scoreme.scheduler.model;
 
 import java.util.List;
 
-/**
- * Holds the complete scheduling problem — all inputs in one place.
- *
- * Why this class exists:
- * Passing one object to the algorithm is cleaner than passing
- * passing 6-7 separate parameters. Like an exam paper that
- * all parameters separately.
- */
 public class SchedulerInstance {
 
-    // Saare tasks ki list — T0, T1, T2...
     private List<Task> tasks;
 
-    // Conflict pairs — [i, j] means task i and task j
-    // cannot run in the same slot (GPU or Kafka partition clash)
-    // Example: [[0,1], [1,3]] → T0-T1 conflict, T1-T3 conflict
     private List<int[]> conflicts;
 
-    // Har slot ki capacity — [CPU, RAM, GPU, Network]
-    // capacities.get(0) → slot 0 ki capacity
-    // capacities.get(1) → slot 1 ki capacity
     private List<double[]> capacities;
 
-    // Total number of available slots
     private int k;
 
-    // Constructors
     public SchedulerInstance() {}
 
     public SchedulerInstance(List<Task> tasks, List<int[]> conflicts,
@@ -39,7 +22,6 @@ public class SchedulerInstance {
         this.k = k;
     }
 
-    // Getters & Setters
     public List<Task> getTasks() { return tasks; }
     public void setTasks(List<Task> tasks) { this.tasks = tasks; }
 
