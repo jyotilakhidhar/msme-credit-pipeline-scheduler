@@ -6,7 +6,7 @@ import java.util.Map;
  * Holds the final output of the scheduling algorithm.
  *
  * Why this class exists:
- * Assignment ne kya output diya — yeh ek clean object mein
+ * Holds the algorithm output — wrapped in one clean object
  * Wrapping in one object allows easy JSON serialization.
  * Like an exam result card — pass/fail, score, remarks.
  *
@@ -16,14 +16,14 @@ public class AssignmentResult {
 
     // task_id → slot_number mapping
     // Example: {"T0": 2, "T1": 0, "T3": 1}
-    // Matlab T0 ko slot 2 mein assign kiya, T1 ko slot 0 mein
+    // Example: T0 assigned to slot 2, T1 assigned to slot 0
     private Map<String, Integer> assignment;
 
     // Total penalty score — jitna kam utna better
     // Hamara formula: P_base + load imbalance penalty
     private double penalty;
 
-    // Algorithm kitne milliseconds mein complete hua
+    // Time taken by the algorithm in milliseconds
     private long runtimeMs;
 
     // Kya valid assignment mila? true = feasible, false = infeasible

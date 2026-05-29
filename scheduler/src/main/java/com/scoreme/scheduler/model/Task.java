@@ -57,7 +57,7 @@ public class Task {
 
     /**
      * SLA window size — smaller means fewer slot options available
-     * Isko sorting mein use karenge — tight window wale tasks PEHLE assign honge
+     * Used in sorting — tasks with tight windows are assigned first
      */
     public int getWindowSize() {
         return upperBound - lowerBound;

@@ -19,7 +19,7 @@ import com.scoreme.scheduler.model.Task;
  * 1. Schedule highest priority + tightest window tasks first
  * 2. For each task, try slots within its SLA window
  * 3. A slot is valid if:
- *    F1 — koi conflicting task us slot mein nahi (ConflictChecker)
+ *    F1 — no conflicting task exists in this slot (ConflictChecker)
  *    F2 — slot ki capacity exceed nahi hogi (ResourceChecker)
  *    F3 — slot is within task SLA window (enforced by loop bounds)
  * 4. If no valid slot found → report INFEASIBLE
@@ -84,7 +84,7 @@ public class GreedyScheduler {
                     assignment, -1.0, runtime, false,
                     "Task " + task.getId() + " ke liye koi valid slot nahi mila " +
                     "(window=[" + task.getLowerBound() + "," + task.getUpperBound() + "]," +
-                    " conflicts aur resource limits ke baad)"
+                    " — all conflict and resource constraints checked)"
                 );
             }
         }

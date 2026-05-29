@@ -7,7 +7,7 @@ import java.util.List;
  *
  * Why this class exists:
  * Passing one object to the algorithm is cleaner than passing
- * 6-7 alag parameters pass karna. Jaise ek exam paper mein
+ * passing 6-7 separate parameters. Like an exam paper that
  * all parameters separately.
  */
 public class SchedulerInstance {
@@ -15,8 +15,8 @@ public class SchedulerInstance {
     // Saare tasks ki list — T0, T1, T2...
     private List<Task> tasks;
 
-    // Conflict pairs — [i, j] matlab task i aur task j
-    // ek hi slot mein NAHI chal sakte (GPU clash ya Kafka partition clash)
+    // Conflict pairs — [i, j] means task i and task j
+    // cannot run in the same slot (GPU or Kafka partition clash)
     // Example: [[0,1], [1,3]] → T0-T1 conflict, T1-T3 conflict
     private List<int[]> conflicts;
 
