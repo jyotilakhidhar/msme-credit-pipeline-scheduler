@@ -7,10 +7,10 @@ import java.util.Map;
  *
  * Why this class exists:
  * Assignment ne kya output diya — yeh ek clean object mein
- * wrap karna zaroori hai taaki JSON mein easily convert ho sake.
- * Jaise exam ka result card hota hai — pass/fail, marks, remarks.
+ * Wrapping in one object allows easy JSON serialization.
+ * Like an exam result card — pass/fail, score, remarks.
  *
- * ScoreMe ne specifically yeh 5 fields maange hain output mein.
+ * ScoreMe requires exactly these 5 fields in the output.
  */
 public class AssignmentResult {
 
@@ -29,7 +29,7 @@ public class AssignmentResult {
     // Kya valid assignment mila? true = feasible, false = infeasible
     private boolean feasible;
 
-    // Agar infeasible hai toh kyu — explain karna zaroori hai
+    // Reason for infeasibility — null if feasible
     // Example: "Task T3 ke liye koi valid slot nahi mila — sab conflicts ya capacity full"
     // Feasible hone par yeh null rahega
     private String violationReason;

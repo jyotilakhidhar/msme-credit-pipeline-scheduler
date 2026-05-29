@@ -7,8 +7,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.scoreme.scheduler.model.AssignmentResult;
 
 /**
- * AssignmentResult ko JSON file mein likhta hai.
- * Output results/ folder mein save hoga.
+ * Writes AssignmentResult to a JSON output file.
+ * Output is saved to the results/ directory.
  */
 public class ResultWriter {
 

@@ -17,13 +17,13 @@ public class Task {
     // Example: Bank OCR task ko zyada GPU chahiye → [8, 32, 4, 1.5]
     private double[] resources;
 
-    // SLA Window — task sirf inhi slots mein run ho sakta hai
+    // SLA Window — task must run within [lowerBound, upperBound]
     // lowerBound = earliest slot, upperBound = latest slot
     // Example: Bureau Pull → slots 1 se 4 ke beech hi run hona chahiye
     private int lowerBound;
     private int upperBound;
 
-    // Priority weight — yeh task kitna important hai
+    // Priority weight — higher means more important
     // Tier-1 PSU bank ka task → high weight (8-10)
     // Tier-3 NBFC ka task → low weight (1-3)
     private double weight;
@@ -56,7 +56,7 @@ public class Task {
     public void setWeight(double weight) { this.weight = weight; }
 
     /**
-     * SLA window ka size — chota matlab task ke paas kam options hain
+     * SLA window size — smaller means fewer slot options available
      * Isko sorting mein use karenge — tight window wale tasks PEHLE assign honge
      */
     public int getWindowSize() {

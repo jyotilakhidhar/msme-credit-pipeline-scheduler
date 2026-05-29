@@ -14,9 +14,9 @@ import com.scoreme.scheduler.model.Task;
  * Imbalance = Σ (used[slot][dim] / capacity[slot][dim])²  ← resource waste
  *
  * Viva answer: "Maine load imbalance term isliye add ki kyunki
- * sirf weighted slot index kaafi nahi hai — agar ek slot mein
- * CPU 100% use ho aur GPU 10%, yeh infrastructure waste hai.
- * ScoreMe ke OCR cluster mein yeh real problem hai."
+ * weighted slot index alone is insufficient — if one slot has
+ * CPU at 100% and GPU at 10%, that is infrastructure waste.
+ * This is a real problem in ScoreMe's OCR cluster."
  */
 public class PenaltyCalculator {
 
@@ -36,14 +36,14 @@ public class PenaltyCalculator {
             }
         }
 
-        // Load Imbalance — har slot mein har dimension check karo
+        // Load Imbalance — check each dimension per slot
         int numDims = instance.getCapacities().get(0).length;
 
         for (int s = 0; s < instance.getK(); s++) {
             double[] capacity = instance.getCapacities().get(s);
             double[] used = new double[numDims];
 
-            // Is slot mein assigned tasks ka resource usage calculate karo
+            // Calculate total resource usage for tasks in this slot
             for (Task task : instance.getTasks()) {
                 Integer slot = assignment.get(task.getId());
                 if (slot != null && slot == s) {

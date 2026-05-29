@@ -11,7 +11,7 @@ import com.scoreme.scheduler.model.AssignmentResult;
 import com.scoreme.scheduler.model.SchedulerInstance;
 
 /**
- * Entry point — JSON file read karo, algorithm chalo, result save karo.
+ * Entry point — reads JSON input, runs algorithm, saves result.
  * Usage: mvn spring-boot:run -Dspring-boot.run.arguments="<input.json> <output.json>"
  */
 @SpringBootApplication

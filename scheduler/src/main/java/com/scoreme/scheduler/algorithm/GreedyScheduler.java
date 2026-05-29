@@ -16,13 +16,13 @@ import com.scoreme.scheduler.model.Task;
  * Priority-Aware Conflict-First Greedy Scheduler
  *
  * Algorithm logic (teacher-classroom analogy):
- * 1. Sabse important + tight-window wale task ko PEHLE schedule karo
- * 2. Har task ke liye uski SLA window mein ek-ek slot try karo
- * 3. Slot valid hai agar:
+ * 1. Schedule highest priority + tightest window tasks first
+ * 2. For each task, try slots within its SLA window
+ * 3. A slot is valid if:
  *    F1 — koi conflicting task us slot mein nahi (ConflictChecker)
  *    F2 — slot ki capacity exceed nahi hogi (ResourceChecker)
- *    F3 — slot task ki SLA window mein hai (loop condition se automatically)
- * 4. Koi slot nahi mila → INFEASIBLE report karo
+ *    F3 — slot is within task SLA window (enforced by loop bounds)
+ * 4. If no valid slot found → report INFEASIBLE
  */
 public class GreedyScheduler {
 
@@ -37,9 +37,9 @@ public class GreedyScheduler {
         List<Task> tasks = instance.getTasks();
         int n = tasks.size();
 
-        // Step 1 — Index list banao aur sort karo
+        // Step 1 — Build index list and sort by priority + window size
         // Sort order: high weight pehle, phir choti window pehle
-        // Reason: important + constrained tasks ko pehle assign karna safer hai
+        // Reason: assigning constrained tasks first reduces infeasibility risk
         List<Integer> order = new ArrayList<>();
         for (int i = 0; i < n; i++) order.add(i);
 
@@ -60,7 +60,7 @@ public class GreedyScheduler {
             Task task = tasks.get(idx);
             boolean assigned = false;
 
-            // F3 — sirf SLA window ke andar slots try karo
+            // F3 — only try slots within task SLA window
             for (int slot = task.getLowerBound(); slot <= task.getUpperBound(); slot++) {
 
                 // F1 — conflict check
@@ -71,7 +71,7 @@ public class GreedyScheduler {
                 boolean resourceOk = resourceChecker.fits(idx, slot, instance, assignment);
                 if (!resourceOk) continue;
 
-                // Dono pass → assign karo!
+                // Both constraints pass — assign task to this slot
                 assignment.put(task.getId(), slot);
                 assigned = true;
                 break;
@@ -89,7 +89,7 @@ public class GreedyScheduler {
             }
         }
 
-        // Step 3 — Penalty calculate karo
+        // Step 3 — Calculate total penalty for the assignment
         double penalty = penaltyCalculator.calculate(instance, assignment);
         long runtime = System.currentTimeMillis() - startTime;
 

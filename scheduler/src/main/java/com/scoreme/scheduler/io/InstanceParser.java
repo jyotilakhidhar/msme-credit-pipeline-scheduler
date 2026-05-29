@@ -10,8 +10,8 @@ import com.scoreme.scheduler.model.SchedulerInstance;
 import com.scoreme.scheduler.model.Task;
 
 /**
- * JSON input file ko SchedulerInstance mein convert karta hai.
- * Python generator ne jo JSON banaya — woh yahan read hota hai.
+ * Parses a JSON input file into a SchedulerInstance object.
+ * Reads JSON files produced by the Python benchmark generator.
  */
 public class InstanceParser {
 
@@ -22,7 +22,7 @@ public class InstanceParser {
 
         int k = root.get("k").asInt();
 
-        // Tasks parse karo
+        // Parse tasks array
         List<Task> tasks = new ArrayList<>();
         JsonNode tasksNode = root.get("tasks");
         for (JsonNode t : tasksNode) {
@@ -39,14 +39,14 @@ public class InstanceParser {
             tasks.add(new Task(id, resources, lb, ub, weight));
         }
 
-        // Conflicts parse karo — [[0,1],[1,3]...]
+        // Parse conflict pairs — e.g. [[0,1],[1,3]]
         List<int[]> conflicts = new ArrayList<>();
         JsonNode conflictsNode = root.get("conflicts");
         for (JsonNode c : conflictsNode) {
             conflicts.add(new int[]{c.get(0).asInt(), c.get(1).asInt()});
         }
 
-        // Capacities parse karo — har slot ki [CPU,RAM,GPU,Network]
+        // Parse per-slot capacities — [CPU, RAM, GPU, Network]
         List<double[]> capacities = new ArrayList<>();
         JsonNode capsNode = root.get("capacities");
         for (JsonNode cap : capsNode) {

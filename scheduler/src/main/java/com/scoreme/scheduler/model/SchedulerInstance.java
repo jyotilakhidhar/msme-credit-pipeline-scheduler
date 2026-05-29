@@ -6,9 +6,9 @@ import java.util.List;
  * Holds the complete scheduling problem — all inputs in one place.
  *
  * Why this class exists:
- * Algorithm ko ek hi object pass karna easy hai instead of
+ * Passing one object to the algorithm is cleaner than passing
  * 6-7 alag parameters pass karna. Jaise ek exam paper mein
- * saare questions ek jagah hote hain.
+ * all parameters separately.
  */
 public class SchedulerInstance {
 
@@ -25,7 +25,7 @@ public class SchedulerInstance {
     // capacities.get(1) → slot 1 ki capacity
     private List<double[]> capacities;
 
-    // Total kitne slots available hain
+    // Total number of available slots
     private int k;
 
     // Constructors
